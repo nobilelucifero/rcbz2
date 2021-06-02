@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import UserInfo from "../components/UserInfo/UserInfo";
-import Disqus from "../components/Disqus/Disqus";
+// import Disqus from "../components/Disqus/Disqus";
 import PostTags from "../components/PostTags/PostTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
@@ -28,15 +28,21 @@ export default function PostTemplate({ data, pageContext }) {
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <div>
-          <h1>{post.title}</h1>
-          {/* eslint-disable-next-line react/no-danger */}
-          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          <div className="post-meta">
-            <PostTags tags={post.tags} />
-            <SocialLinks postPath={slug} postNode={postNode} />
+          <div className="row">
+            <h1 class="display-1">{post.title}</h1>
           </div>
-          <UserInfo config={config} />
-          <Disqus postNode={postNode} />
+          {/* eslint-disable-next-line react/no-danger */}
+          <div className="row">
+            <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          </div>
+          <div className="row">
+            <div className="post-meta">
+              <PostTags tags={post.tags} />
+              {/* <SocialLinks postPath={slug} postNode={postNode} /> */}
+            </div>
+          </div>
+          {/* <UserInfo config={config} /> */}
+          {/* <Disqus postNode={postNode} /> */}
           <Footer config={config} />
         </div>
       </div>

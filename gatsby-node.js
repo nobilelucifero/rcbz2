@@ -46,6 +46,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const categoryPage = path.resolve("src/templates/category.jsx");
   const listingPage = path.resolve("./src/templates/listing.jsx");
   const landingPage = path.resolve("./src/templates/landing.jsx");
+  // const landingPage = path.resolve("./src/pages/index.jsx");
 
   // Get a full list of markdown posts
   const markdownQueryResult = await graphql(`
@@ -103,7 +104,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     [...Array(pageCount)].forEach((_val, pageNum) => {
       createPage({
-        path: pageNum === 0 ? `/` : `/${pageNum + 1}/`,
+        path: pageNum === 0 ? `/blog` : `/blog/${pageNum + 1}/`,
         component: listingPage,
         context: {
           limit: postsPerPage,
@@ -115,11 +116,15 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   } else {
     // Load the landing page instead
-    createPage({
-      path: `/`,
-      component: landingPage,
-    });
+    // createPage({
+    //   path: `/`,
+    //   component: landingPage,
+    // });
   }
+  createPage({
+    path: `/`,
+    component: landingPage,
+  });
 
   // Post page creating
   postsEdges.forEach((edge, index) => {

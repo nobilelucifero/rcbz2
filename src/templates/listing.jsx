@@ -23,7 +23,7 @@ function Listing({ pageContext, data }) {
           return (
             <Link
               key={`listing-page-${pageNum}`}
-              to={pageNum === 1 ? "/" : `/${pageNum}/`}
+              to={pageNum === 1 ? "/blog" : `/blog/${pageNum}/`}
             >
               {pageNum}
             </Link>
@@ -39,12 +39,12 @@ function Listing({ pageContext, data }) {
   return (
     <Layout>
       <div className="listing-container">
-        <div className="posts-container">
+        <div className="row">
           <Helmet title={config.siteTitle} />
           <SEO />
           <PostListing postEdges={postEdges} />
         </div>
-        {renderPaging()}
+        {/* {renderPaging()} */}
       </div>
     </Layout>
   );
@@ -52,7 +52,6 @@ function Listing({ pageContext, data }) {
 
 export default Listing;
 
-/* eslint no-undef: "off" */
 export const listingQuery = graphql`
   query ListingQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
