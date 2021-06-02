@@ -35,7 +35,7 @@ function PostListing({ postEdges }) {
             </figure>
             <div className="post-previews--content">
               <h3 className="post-previews--title">
-                {post.title} {++index}
+                {post.title} {post.cover} {++index}
               </h3>
               <p className="post-previews--details">
                 <time>{post.date}</time>
