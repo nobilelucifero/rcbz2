@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import Logo from "../../assets/silly-guy.svg";
 
 function Header() {
   const activeClass = "header--nav--item__active";
@@ -7,7 +8,9 @@ function Header() {
     <header className="row header">
       <div className="header--title">
         <Link to="/">
+          <img src={Logo} alt=" " />
           <span>Riccardo Buzzotta</span>
+          {/* <span>Riccardo Buzzotta</span> */}
         </Link>
       </div>
       <nav className="header--nav">

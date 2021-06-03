@@ -279,13 +279,30 @@ img {
 }
 .header--title {
   line-height: 150%;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  /* font-size: 1.25rem; */
   margin: 0;
   font-weight: 700;
   flex-grow: 1;
 }
+.header--title img {
+  width: 44px;
+  height: auto;
+  /* display: block; */
+  margin-right: 1ch;
+}
 .header--title a {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+
   color: inherit;
+  font-size: inherit;
+  /* display: block; */
+}
+.header--title span {
+  /* displ */
 }
 .header--nav {
   display: flex;
