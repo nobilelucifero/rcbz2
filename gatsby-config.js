@@ -136,6 +136,7 @@ module.exports = {
                 site_url
                 feed_url
                 title
+                subtitle
                 description
                 image_url
                 copyright
@@ -178,6 +179,7 @@ module.exports = {
                     }
                     frontmatter {
                       title
+                      subtitle
                       cover
                       date
                       category

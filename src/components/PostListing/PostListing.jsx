@@ -9,6 +9,7 @@ function PostListing({ postEdges }) {
       tags: postEdge.node.frontmatter.tags,
       cover: postEdge.node.frontmatter.cover,
       title: postEdge.node.frontmatter.title,
+      subtitle: postEdge.node.frontmatter.subtitle,
       // date: postEdge.node.fields.date,
       date: postEdge.node.frontmatter.date,
       excerpt: postEdge.node.excerpt,
@@ -29,14 +30,22 @@ function PostListing({ postEdges }) {
         /* Your post list here. */
         postList.map((post, index) => (
           <Link className="post-previews--item" to={post.path} key={post.title}>
-            <figure className="post-previews--figure">
-              {/* <img src={urls[index]} alt=" " /> */}
-              <img src={post.cover} alt="" />
-            </figure>
+            {/* <figure className="post-previews--figure"> */}
+            {/* <img src={urls[index]} alt=" " /> */}
+            {/* <img src={post.cover} alt="" /> */}
+            {/* </figure> */}
             <div className="post-previews--content">
               <h3 className="post-previews--title">
-                {post.title} {post.cover} {++index}
+                {post.title}
+                {/* {post.subtitle && (
+                  <span className="post-previews--subtitle">
+                    &nbsp;/ {post.subtitle}
+                  </span>
+                )} */}
               </h3>
+              {/* {post.subtitle && (
+                <h4 className="post-previews--subtitle">{post.subtitle}</h4>
+              )} */}
               <p className="post-previews--details">
                 <time>{post.date}</time>
               </p>

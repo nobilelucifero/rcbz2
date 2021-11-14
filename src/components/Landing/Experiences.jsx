@@ -26,9 +26,9 @@ function Experiences({ config, labeled }) {
     <div className="row experiences">
       <h2>Experience</h2>
       <p className="display-2">
-        10 years of experience in Design, Product, Development. From agencies
-        and small startups, to large orgs. From full-time positions, to
-        consulting (ongoing).
+        10 years of experience at the intersection of Design, Product,
+        Development. <br />
+        From agencies and small startups, to large orgs.
       </p>
       <ul className="list--wrapper">{getExperiencesElements()}</ul>
     </div>

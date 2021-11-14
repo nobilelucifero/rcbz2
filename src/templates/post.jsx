@@ -59,6 +59,7 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
+        subtitle
         cover
         date
         category
