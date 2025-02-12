@@ -1,10 +1,16 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+import mdx from "@astrojs/mdx";
+// import sitemap from "@astrojs/sitemap";
+
+export const basePath = "rcbz2";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [mdx(), sitemap()],
+  vite: { plugins: [tailwindcss()] },
+  site: "https://nobilelucifero.github.io",
+  base: basePath,
+  integrations: [mdx()],
+  // integrations: [mdx(), sitemap()],
 });
