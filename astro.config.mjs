@@ -10,7 +10,7 @@ export const basePath = "rcbz2";
 export default defineConfig({
   vite: { plugins: [tailwindcss()] },
   site: "https://nobilelucifero.github.io",
-  base: basePath,
+  base: "rcbz2",
   integrations: [mdx()],
   // integrations: [mdx(), sitemap()],
 });
