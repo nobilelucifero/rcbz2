@@ -3,7 +3,6 @@
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
 import { SITE_TITLE } from "../consts";
-import { basePath } from "../../astro.config.mjs";
 interface Props {
   title: string;
   description: string;
@@ -18,8 +17,9 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href={`/styles/global.css`} />
 <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-<link rel="icon" type="image/jpg" href={`${basePath}/rcbz-profile-pic.jpg`} />
+<link rel="icon" type="image/jpg" href="/rcbz-profile-pic.jpg" />
 <!-- <link rel="sitemap" href="/sitemap-index.xml" /> -->
 <!-- <link
 	rel="alternate"
@@ -32,7 +32,7 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <!-- Font preloads -->
 <link
   rel="preload"
-  href={`${basePath}/fonts/geist-variable.ttf`}
+  href="/fonts/geist-variable.ttf"
   as="font"
   type="font/ttf"
   crossorigin

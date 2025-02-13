@@ -3,7 +3,6 @@
 import { SITE_TITLE } from "../consts";
 import { Image } from "astro:assets";
 import profilePic from "/public/rcbz-profile-pic.jpg";
-import { basePath } from "../../astro.config.mjs";
 ---
 
 <header>
@@ -12,8 +11,7 @@ import { basePath } from "../../astro.config.mjs";
       <Image class="size-52 rounded-xl" src={profilePic} alt=" " />
       <div class="flex flex-col">
         <h2>
-          <a class="logo text-xl font-medium" href={`${basePath}/`}
-            >{SITE_TITLE}</a>
+          <a class="logo text-xl font-medium" href="/">{SITE_TITLE}</a>
         </h2>
         <p class="text-sm text-gray-500">Product designer and founder</p>
       </div>
